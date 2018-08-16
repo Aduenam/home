@@ -1,14 +1,31 @@
+var resp;
+
 var url = 'https://newsapi.org/v2/everything?' +
           'q=immigration&' +
           'q=ICE&' +
+          'pageSize=20&' +
           'apiKey=2f002fab97254fc48292f9444d1d12a6';
+          
 var req = new Request(url);
 fetch(req)
     .then(function(response) {
-        console.log(response.json());
+        return response.json();
     })
+    .then(function(json) {
+        var articles = json.articles;
+        forEach(articles, function(article) {
+            console.log(article.urlToImage);
+        })
+        console.log(json.articles);
+        
+    });
     
     
+
+
+var newsImages = [];
+
+
     
     
     

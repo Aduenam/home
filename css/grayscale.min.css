@@ -23,7 +23,7 @@
  #mainNav.navbar-shrink .nav-link.active{color:#64a19d;outline:0;border-bottom:.25rem solid #64a19d}}
  .masthead{position:left;width:100%;height:auto;min-height:35rem;padding:15rem 0;background:linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5) 75%,#161616 100%),url(../img/LibertyStatue.jpg);background-position:left;background-repeat:no-repeat;background-attachment:scroll;background-size:cover}
  .masthead h1{font-family:'Varela Round';font-size:2.5rem;line-height:2.5rem;letter-spacing:.8rem;background:-webkit-linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,0.5));-webkit-text-fill-color:transparent;-webkit-background-clip:text}
- .masthead h2{max-width:20rem;font-size:1rem}@media (min-width:768px){.masthead h1{font-size:4rem;line-height:4rem}}@media (min-width:992px){.masthead{height:100vh;padding:0}
+ .masthead h2{max-width:20rem;font-size:1rem;color:black}@media (min-width:768px){.masthead h1{font-size:4rem;line-height:4rem}}@media (min-width:992px){.masthead{height:100vh;padding:0}
  .masthead h1{font-size:6.5rem;line-height:6.5rem;letter-spacing:.8rem}
  .masthead h2{max-width:30rem;font-size:1.25rem}}
  .masthead h1TOP{align: top;font-family:'Varela Round';font-size:2.5rem;line-height:2.5rem;letter-spacing:.8rem;background:-webkit-linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,0.5));-webkit-text-fill-color:transparent;-webkit-background-clip:text}
@@ -57,17 +57,31 @@
  .text-primary{color:#64a19d!important}
  footer{padding:2rem 0}
  
- 
+
  * {box-sizing:border-box}
 /* Slideshow container */
 
 .slideshow-container {
-  max-width: 2000px;
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
   background-color: rgb(214, 180, 156);
  
   position: center;
   margin: auto;
 }
+
+img{
+    width: 1000px;
+    height: 500px;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+
+/*.portrait{*/
+/*    height: 1000px;*/
+/*    width: 500px;*/
+/*}*/
 
 /* Hide the images by default */
 .mySlides {
@@ -139,9 +153,16 @@
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
+}
+
+.fadeout {
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 2s;
+  animation-name: fadeout;
+  animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {
@@ -152,4 +173,14 @@
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+@-webkit-keyframes fadeout {
+  from {opacity: 1} 
+  to {opacity: .4}
+}
+
+@keyframes fadeout {
+  from {opacity: 1} 
+  to {opacity: .4}
 }
