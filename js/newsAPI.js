@@ -1,4 +1,4 @@
-var resp;
+var newsImages = [];
 
 var url = 'https://newsapi.org/v2/everything?' +
           'q=immigration&' +
@@ -13,17 +13,19 @@ fetch(req)
     })
     .then(function(json) {
         var articles = json.articles;
+        var x = 0;
         articles.forEach(function(article) {
-            console.log(article.urlToImage);
+            //console.log(article.urlToImage);
+            var newImage = article.urlToImage;
+            newsImages.push(newImage);
+            console.log(newsImages[x]);
+            x += 1;
+            
         })
-        console.log(json.articles);
+        //console.log(json.articles);
         
     });
     
-    
-
-
-var newsImages = [];
 
 
     
