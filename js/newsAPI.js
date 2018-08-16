@@ -13,7 +13,7 @@ fetch(req)
     })
     .then(function(json) {
         var articles = json.articles;
-        forEach(articles, function(article) {
+        articles.forEach(function(article) {
             console.log(article.urlToImage);
         })
         console.log(json.articles);
