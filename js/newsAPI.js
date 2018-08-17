@@ -1,12 +1,13 @@
 var newsImages = [];
-var api_key = process.env.NEWS_KEY;
-
 var url = 'https://newsapi.org/v2/everything?' +
           'q=immigration&' +
           'q=ICE&' +
           'pageSize=20&' +
-          'apiKey=2f002fab97254fc48292f9444d1d12a6;
+          'apiKey=2f002fab97254fc48292f9444d1d12a6';
           
+var slideshow_element = document.getElementById("news-slideshow");
+
+var i = 1;
 var req = new Request(url);
 fetch(req)
     .then(function(response) {
@@ -14,30 +15,50 @@ fetch(req)
     })
     .then(function(json) {
         var articles = json.articles;
-        var x = 0;
         articles.forEach(function(article) {
-            //console.log(article.urlToImage);
             var newImage = article.urlToImage;
-            newsImages.push(newImage);
-            console.log(newsImages[x]);
-            x += 1;
+            var website = article.url;
+            var text = article.description;
+            if (newImage == null) {
+                newImage = "https://cdn3.bigcommerce.com/s-vw57mn/products/40160/images/117175/Hero-Arts-Cling-Stamps-Newspaper-Bold-Prints-857009156494_image1__21010.1517348776.600.600.jpg?c=2";
+            }
             
-        })
-        //console.log(json.articles);
+            var div = document.createElement('div');
+            div.className = 'mySlides fade';
+            div.innerHTML =
+             '<div class="numbertext">'+ i + ' / 20</div>\
+                <a href = ' + website + '> <img src=' + newImage + ' style="width:100%"></a>\
+                 <div class="text">' + i +'</div>'; 
+                 
+            slideshow_element.appendChild(div);
+            i +=1;
+
+        });
+        
+        showSlides();
+        
         
     });
-    
-console.log(newsImages[0]);
-
-    
-    
-    
-    
 
 
+
+// var lang = new Array();
+// lang = ["English", "Chinese", "Korean"];
+
+// function buildLanguages() {
+//     var langDiv = document.getElementById("langDiv");
+//     var html = "<form>";
+//     for (var i = 0; i < lang.length; i++) {
+//         html += "<input type='checkbox' name='" + lang[i] + "' value='" + i + "' onClick=\"setValue(this.value);\">" + lang[i] + "<br>";
+//     }
+//     html += "</form>";
+
+//     langDiv.innerHTML = html;
+// }
+// buildLanguages();
+    
 
 var slideIndex = 0;
-showSlides();
 
 function showSlides() {
     var i;
@@ -46,8 +67,12 @@ function showSlides() {
         slides[i].style.display = "none"; 
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1} 
+    if (slideIndex > slides.length) {slideIndex = 1}
     slides[slideIndex-1].style.display = "block"; 
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+    
+    setTimeout(showSlides, 1000); // Change image every 6 seconds
+    sleep(1000);
 }
+
+
    
