@@ -28,7 +28,7 @@ fetch(req)
             div.innerHTML =
              '<div class="numbertext">'+ i + ' / 20</div>\
                 <a href = ' + website + '> <img src=' + newImage + ' style="width:100%"></a>\
-                 <div class="text">' + i +'</div>'; 
+                 <div class="text">' + text +'</div>'; 
                  
             slideshow_element.appendChild(div);
             i +=1;
@@ -71,7 +71,7 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block"; 
     
     setTimeout(showSlides, 1000); // Change image every 6 seconds
-    sleep(1000);
+    sleep(5000);
 }
 
 
