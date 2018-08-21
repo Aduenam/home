@@ -65,17 +65,17 @@
  .ad{position: fixed;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px;transform: translate(-50%, -50%)}
 .ads{display: flex;
   justify-content: center; padding:0%}
- * {box-sizing:border-box}
+ .mycarousel{}
+  * {box-sizing:border-box}
 /* Slideshow container */
-.slideshow-container {
-  width: 1000px;
-  height: 500px;
+.carousel {
+  width: 80%;
+  height: 80%;
   overflow: hidden;
-  background-color: rgb(214, 180, 156);
- 
   position: center;
   margin: auto;
 }
+.captionstyles{text-color:black;text-size:5px; padding-top: 50%}
 
 img{
     width: 1000px;
