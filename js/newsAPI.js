@@ -6,7 +6,7 @@ var url = 'https://newsapi.org/v2/everything?' +
           'apiKey=2f002fab97254fc48292f9444d1d12a6';
           
 var slideshow_element = document.getElementById("news-slideshow");
-var default_image = "https://cdn3.bigcommerce.com/s-vw57mn/products/40160/images/117175/Hero-Arts-Cling-Stamps-Newspaper-Bold-Prints-857009156494_image1__21010.1517348776.600.600.jpg?c=2";
+var default_image = "https://higherlogicdownload.s3.amazonaws.com/IMMIGRATIONJUSTICE/0778af42-f38c-4037-83df-bfe5c8a7e8da/UploadedImages/Images/we_are_all_immigrants.jpg";
 var on_err = 'this.src="'+default_image+'"';
 
 var i = 1;
@@ -26,7 +26,7 @@ fetch(req)
             }
             
             var div = document.createElement('div');
-            if (i == 5) {div.className = 'carousel-item active';}
+            if (i == 12) {div.className = 'carousel-item active';}
             else {div.className = 'carousel-item';}
             
             div.style = 'background-color:transparent;'
